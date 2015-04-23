@@ -1,0 +1,36 @@
+{
+    "name": "kenjis/codeigniter-composer-installer",
+    "description": "Package to install CodeIgniter3 via Composer with secure folder structure.",
+    "keywords": [
+        "CodeIgniter",
+        "Composer",
+        "installer"
+    ],
+    "homepage": "https://github.com/kenjis/codeigniter-composer-installer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kenji Suzuki",
+            "email": "kenji.uui@gmail.com"
+        }
+    ],
+    "require": {
+            "codeigniter/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kenjis\\CodeIgniter\\": "src/"
+        }
+    },
+    "scripts" : {
+        "post-install-cmd": [
+            "Kenjis\\CodeIgniter\\Installer::postInstall",
+            "composer update"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
