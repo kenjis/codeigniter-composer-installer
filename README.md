@@ -21,7 +21,8 @@ codeigniter/
 
 ## Requirements
 
-* composer command
+* PHP 5.3.2 or later
+* `composer` command
 * Git
 
 ## How to Use
