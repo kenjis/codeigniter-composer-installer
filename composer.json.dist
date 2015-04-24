@@ -2,7 +2,7 @@
 	"description" : "The CodeIgniter Application with Composer",
 	"require": {
 		"php": ">=5.3.2",
-		"codeigniter/framework": "dev-master"
+		"codeigniter/framework": "3.0.*"
 	},
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*"

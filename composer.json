@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-            "codeigniter/framework": "dev-master"
+            "codeigniter/framework": "3.0.*"
     },
     "autoload": {
         "psr-4": {

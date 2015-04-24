@@ -1,6 +1,6 @@
 # CodeIgniter Composer Installer
 
-This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (branch `master`) with secure folder structure via Composer.
+This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (version `3.0.*`) with secure folder structure via Composer.
 
 You can update CodeIgniter system folder to latest version with one command.
 
