@@ -56,7 +56,7 @@ class Installer
 
     /**
      * Recursive Copy
-     * 
+     *
      * @param string $src
      * @param string $dst
      */
@@ -73,8 +73,8 @@ class Installer
             if ($file->isDir()) {
                 mkdir($dst . '/' . $iterator->getSubPathName());
             } else {
-                 copy($file, $dst . '/' . $iterator->getSubPathName());
+                copy($file, $dst . '/' . $iterator->getSubPathName());
             }
-       }
+        }
     }
 }
