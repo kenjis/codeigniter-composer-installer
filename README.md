@@ -35,17 +35,17 @@ codeigniter/
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
 
-If you want to install translations for system messages (requires shell).
+If you want to install translations for system messages (requires shell):
 
 ```
 $ bin/install-translations.sh
 ```
 
-### Run PHP built-in server
+### Run PHP built-in server (PHP 5.4 or later)
 
 ```
 $ cd /path/to/codeigniter
-$ php -S localhost:8000 -t public/
+$ php -S localhost:8000 -t public/ bin/router.php
 ```
 
 ### Update CodeIgniter
