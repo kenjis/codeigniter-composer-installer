@@ -13,7 +13,13 @@ version="$1"
 
 curl -L -o translations.zip "https://github.com/bcit-ci/codeigniter3-translations/archive/$version.zip"
 unzip translations.zip
-cp -rf "codeigniter3-translations-$version/language/" ../application/language/
+
+OS=`uname`
+if [ "$OS" = "Darwin" ]; then
+    cp -rf "codeigniter3-translations-$version/language/" ../application/language/
+else
+    cp -rf "codeigniter3-translations-$version/language/" -T ../application/language/
+fi
 
 rm translations.zip
 rm -rf "codeigniter3-translations-$version"
