@@ -1,5 +1,16 @@
 <?php
+/**
+ * Part of CodeIgniter Composer Installer
+ *
+ * @author     Kenji Suzuki <https://github.com/kenjis>
+ * @license    MIT License
+ * @copyright  2015 Kenji Suzuki
+ * @link       https://github.com/kenjis/codeigniter-composer-installer
+ */
 
+/**
+ * Router script for PHP built-in server
+ */
 $_SERVER = array_merge($_SERVER, $_ENV);
 
 $file = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'];
