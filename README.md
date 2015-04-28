@@ -56,3 +56,7 @@ $ composer update
 ```
 
 You must update files manually if files in `application` folder or `index.php` change.
+
+## Related
+
+* [Cli for CodeIgniter 3.0](https://github.com/kenjis/codeigniter-cli)
