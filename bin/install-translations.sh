@@ -9,8 +9,11 @@
 
 cd `dirname $0`
 
+user="bcit-ci"
+repos="codeigniter3-translations"
+
 if [ $# -eq 0 ]; then
-    echo "Install Translations for CodeIgniter System Messages"
+    echo "Install Translations for CodeIgniter System Messages ($user/$repos)"
     echo " usage: $0 <version/branch>"
     echo "    eg: $0 3.0.0"
     echo "    eg: $0 master"

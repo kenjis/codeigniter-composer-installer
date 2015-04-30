@@ -38,6 +38,7 @@ $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 If you want to install translations for system messages (requires shell):
 
 ```
+cd /path/to/codeigniter/
 $ bin/install-translations.sh
 ```
 
