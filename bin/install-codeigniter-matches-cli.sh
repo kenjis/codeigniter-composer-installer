@@ -29,11 +29,11 @@ OS=`uname`
 if [ "$OS" = "Darwin" ]; then
     cp -rf "$repos-$version/config/" ../application/config/
     cp -rf "$repos-$version/controllers/" ../application/controllers/
-    cp -rf "$repos-$version/views/" ../application/third_party/
+    cp -rf "$repos-$version/views/" ../application/views/
 else
     cp -rf "$repos-$version/config/" -T ../application/config/
     cp -rf "$repos-$version/controllers/" -T  ../application/controllers/
-    cp -rf "$repos-$version/views/" -T ../application/third_party/
+    cp -rf "$repos-$version/views/" -T ../application/views/
 fi
 
 rm "$zip"
