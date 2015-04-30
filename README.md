@@ -24,7 +24,7 @@ codeigniter/
 ## Requirements
 
 * PHP 5.3.2 or later
-* `composer` command
+* `composer` command (See [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx))
 * Git
 
 ## How to Use
@@ -44,13 +44,13 @@ $ bin/install-translations.sh
 
 #### Install Third Party Libraries (Requires Shell)
 
-Codeigniter Matches CLI:
+[Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli):
 
 ```
 $ bin/install-codeigniter-matches-cli.sh
 ```
 
-CodeIgniter HMVC Modules:
+[CodeIgniter HMVC Modules](https://github.com/jenssegers/codeigniter-hmvc-modules):
 
 ```
 $ bin/install-codeigniter-hmvc-modules.sh
