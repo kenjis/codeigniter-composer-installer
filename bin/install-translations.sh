@@ -11,22 +11,24 @@ cd `dirname $0`
 
 if [ $# -eq 0 ]; then
     echo "Install Translations for CodeIgniter System Messages"
-    echo " usage: $0 <version>"
+    echo " usage: $0 <version/branch>"
+    echo "    eg: $0 3.0.0"
     echo "    eg: $0 master"
     exit
 fi
 
 version="$1"
+zip="tmp-$$.zip"
 
-curl -L -o translations.zip "https://github.com/bcit-ci/codeigniter3-translations/archive/$version.zip"
-unzip translations.zip
+curl -L -o "$zip" "https://github.com/$user/$repos/archive/$version.zip"
+unzip "$zip"
 
 OS=`uname`
 if [ "$OS" = "Darwin" ]; then
-    cp -rf "codeigniter3-translations-$version/language/" ../application/language/
+    cp -rf "$repos-$version/language/" ../application/language/
 else
-    cp -rf "codeigniter3-translations-$version/language/" -T ../application/language/
+    cp -rf "$repos-$version/language/" -T ../application/language/
 fi
 
-rm translations.zip
-rm -rf "codeigniter3-translations-$version"
+rm "$zip"
+rm -rf "$repos-$version"
