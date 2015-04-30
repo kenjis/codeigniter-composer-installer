@@ -41,12 +41,18 @@ If you want to install translations for system messages (requires shell):
 $ bin/install-translations.sh
 ```
 
-#### Third Party Libraries
+#### Install Third Party Libraries (Requires Shell)
 
-Install Codeigniter Matches CLI (requires shell):
+Codeigniter Matches CLI:
 
 ```
 $ bin/install-codeigniter-matches-cli.sh
+```
+
+CodeIgniter HMVC Modules:
+
+```
+$ bin/install-codeigniter-hmvc-modules.sh
 ```
 
 ### Run PHP built-in server (PHP 5.4 or later)
@@ -74,6 +80,7 @@ You must update files manually if files in `application` folder or `index.php` c
 ### Third Party Libraries
 
 * [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli)
+* [CodeIgniter HMVC Modules](https://github.com/jenssegers/codeigniter-hmvc-modules)
 
 ## Related
 
