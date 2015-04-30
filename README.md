@@ -35,15 +35,15 @@ codeigniter/
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
 
-#### Optional
-
 If you want to install translations for system messages (requires shell):
 
 ```
 $ bin/install-translations.sh
 ```
 
-If you want to install Codeigniter Matches CLI (requires shell):
+#### Third Party Libraries
+
+Install Codeigniter Matches CLI (requires shell):
 
 ```
 $ bin/install-codeigniter-matches-cli.sh
@@ -67,8 +67,12 @@ You must update files manually if files in `application` folder or `index.php` c
 
 ## Reference
 
+* [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 * [CodeIgniter](https://github.com/bcit-ci/CodeIgniter)
 * [Translations for CodeIgniter System](https://github.com/bcit-ci/codeigniter3-translations)
+
+### Third Party Libraries
+
 * [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli)
 
 ## Related
