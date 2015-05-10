@@ -86,3 +86,4 @@ You must update files manually if files in `application` folder or `index.php` c
 ## Related
 
 * [Cli for CodeIgniter 3.0](https://github.com/kenjis/codeigniter-cli)
+* [CI PHPUnit Test for CodeIgniter 3.0](https://github.com/kenjis/ci-phpunit-test)

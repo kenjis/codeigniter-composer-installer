@@ -32,5 +32,9 @@
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
+    },
+    "suggest": {
+        "kenjis/codeigniter-cli": "A command-line tool for CodeIgniter 3.0",
+        "kenjis/ci-phpunit-test": "An easier way to use PHPUnit with CodeIgniter 3.0"
     }
 }
