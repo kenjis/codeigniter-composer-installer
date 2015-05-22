@@ -23,7 +23,7 @@ class Installer
      */
     public static function postInstall(Event $event = null)
     {
-        static::recursiveCopy('vendor/codeigniter/framework/application', 'application');
+        self::recursiveCopy('vendor/codeigniter/framework/application', 'application');
         
         mkdir(static::DOCROOT, 0755);
         copy('vendor/codeigniter/framework/index.php', static::DOCROOT . '/index.php');
