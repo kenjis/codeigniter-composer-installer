@@ -83,7 +83,8 @@ You must update files manually if files in `application` folder or `index.php` c
 * [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli)
 * [CodeIgniter HMVC Modules](https://github.com/jenssegers/codeigniter-hmvc-modules)
 
-## Related
+## Related Projects for CodeIgniter 3.0
 
 * [Cli for CodeIgniter 3.0](https://github.com/kenjis/codeigniter-cli)
-* [CI PHPUnit Test for CodeIgniter 3.0](https://github.com/kenjis/ci-phpunit-test)
+* [CI PHPUnit Test](https://github.com/kenjis/ci-phpunit-test)
+* [CodeIgniter Simple and Secure Twig](https://github.com/kenjis/codeigniter-ss-twig)
