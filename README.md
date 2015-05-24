@@ -56,6 +56,12 @@ $ php bin/install.php matches-cli master
 $ php bin/install.php hmvc-modules master
 ```
 
+[Modular Extensions - HMVC](https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc):
+
+```
+$ php bin/install.php modular-extensions-hmvc codeigniter-3.x
+```
+
 ### Run PHP built-in server (PHP 5.4 or later)
 
 ```
