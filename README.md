@@ -84,11 +84,6 @@ You must update files manually if files in `application` folder or `index.php` c
 * [CodeIgniter](https://github.com/bcit-ci/CodeIgniter)
 * [Translations for CodeIgniter System](https://github.com/bcit-ci/codeigniter3-translations)
 
-### Third Party Libraries
-
-* [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli)
-* [CodeIgniter HMVC Modules](https://github.com/jenssegers/codeigniter-hmvc-modules)
-
 ## Related Projects for CodeIgniter 3.0
 
 * [Cli for CodeIgniter 3.0](https://github.com/kenjis/codeigniter-cli)
