@@ -35,25 +35,25 @@ codeigniter/
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
 
-If you want to install translations for system messages (requires shell):
+If you want to install translations for system messages:
 
 ```
 $ cd /path/to/codeigniter
-$ bin/install-translations.sh
+$ php bin/install.php translations 3.0.0
 ```
 
-#### Install Third Party Libraries (Requires Shell)
+#### Install Third Party Libraries
 
 [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli):
 
 ```
-$ bin/install-codeigniter-matches-cli.sh
+$ php bin/install.php matches-cli master
 ```
 
 [CodeIgniter HMVC Modules](https://github.com/jenssegers/codeigniter-hmvc-modules):
 
 ```
-$ bin/install-codeigniter-hmvc-modules.sh
+$ php bin/install.php hmvc-modules master
 ```
 
 ### Run PHP built-in server (PHP 5.4 or later)
