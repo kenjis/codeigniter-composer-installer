@@ -53,6 +53,17 @@ class Installer
                 'dir'   => array('core', 'third_party'),
                 'msg'   => 'See https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc',
             ),
+            'ion-auth' => array(
+                'site'  => 'github',
+                'user'  => 'benedmunds',
+                'repos' => 'CodeIgniter-Ion-Auth',
+                'name'  => 'Codeigniter Matches CLI',
+                'dir'   => array(
+                    'config', 'controllers', 'language', 'libraries',
+                    'migrations', 'models', 'sql', 'views'
+                ),
+                'msg'   => 'See http://benedmunds.com/ion_auth/',
+            ),
         ];
     }
 
@@ -74,6 +85,7 @@ class Installer
         $msg .= "  php $self matches-cli master"  . PHP_EOL;
         $msg .= "  php $self hmvc-modules master"  . PHP_EOL;
         $msg .= "  php $self modular-extensions-hmvc codeigniter-3.x"  . PHP_EOL;
+        $msg .= "  php $self ion-auth 2"  . PHP_EOL;
 
         return $msg;
     }
@@ -126,6 +138,7 @@ class Installer
         
         foreach ($dir as $directory) {
             $src[] = realpath(dirname($filepath) . "/$repos-$version/$directory");
+            @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
         return [$src, $dst];
@@ -150,6 +163,7 @@ class Installer
         
         foreach ($dir as $directory) {
             $src[] = realpath(dirname($filepath) . "/$dirname/$directory");
+            @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
         return [$src, $dst];

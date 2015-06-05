@@ -62,6 +62,12 @@ $ php bin/install.php hmvc-modules master
 $ php bin/install.php modular-extensions-hmvc codeigniter-3.x
 ```
 
+[Ion Auth](https://github.com/benedmunds/CodeIgniter-Ion-Auth):
+
+```
+$ php bin/install.php ion-auth 2
+```
+
 ### Run PHP built-in server (PHP 5.4 or later)
 
 ```
