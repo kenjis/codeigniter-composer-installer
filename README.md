@@ -97,3 +97,4 @@ You must update files manually if files in `application` folder or `index.php` c
 * [CodeIgniter Simple and Secure Twig](https://github.com/kenjis/codeigniter-ss-twig)
 * [CodeIgniter Doctrine](https://github.com/kenjis/codeigniter-doctrine)
 * [CodeIgniter Deployer](https://github.com/kenjis/codeigniter-deployer)
+* [CodeIgniter3 Filename Checker](https://github.com/kenjis/codeigniter3-filename-checker)
