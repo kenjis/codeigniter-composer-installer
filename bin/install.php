@@ -64,6 +64,14 @@ class Installer
                 ),
                 'msg'   => 'See http://benedmunds.com/ion_auth/',
             ),
+            'filename-checker' => array(
+                'site'  => 'github',
+                'user'  => 'kenjis',
+                'repos' => 'codeigniter3-filename-checker',
+                'name'  => 'CodeIgniter3 Filename Checker',
+                'dir'   => 'controllers',
+                'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
+            ),
         ];
     }
 
@@ -86,6 +94,7 @@ class Installer
         $msg .= "  php $self hmvc-modules master"  . PHP_EOL;
         $msg .= "  php $self modular-extensions-hmvc codeigniter-3.x"  . PHP_EOL;
         $msg .= "  php $self ion-auth 2"  . PHP_EOL;
+        $msg .= "  php $self filename-checker master"  . PHP_EOL;
 
         return $msg;
     }

@@ -68,6 +68,12 @@ $ php bin/install.php modular-extensions-hmvc codeigniter-3.x
 $ php bin/install.php ion-auth 2
 ```
 
+[CodeIgniter3 Filename Checker](https://github.com/kenjis/codeigniter3-filename-checker):
+
+```
+$ php bin/install.php filename-checker master
+```
+
 ### Run PHP built-in server (PHP 5.4 or later)
 
 ```
