@@ -27,7 +27,8 @@ class Installer
         
         mkdir(static::DOCROOT, 0755);
         copy('vendor/codeigniter/framework/index.php', static::DOCROOT . '/index.php');
-        
+        copy(dirname(__FILE__) . '/htaccess.txt', static::DOCROOT . '/htaccess.txt');
+
         // Fix paths in index.php
         $file = static::DOCROOT . '/index.php';
         $contents = file_get_contents($file);
@@ -56,6 +57,7 @@ class Installer
         copy('composer.json.dist', 'composer.json');
         
         // delete self
+        unlink(dirname(__FILE__) . '/htaccess.txt');
         unlink(__FILE__);
         rmdir('src');
         unlink('composer.json.dist');
