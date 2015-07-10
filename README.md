@@ -14,6 +14,7 @@ codeigniter/
 ├── composer.json
 ├── composer.lock
 ├── public/
+│   ├── .htaccess
 │   └── index.php
 └── vendor/
     └── codeigniter/
@@ -34,6 +35,8 @@ codeigniter/
 ```
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
+
+Above command installs `public/.htaccess` to remove `index.php` from URL. If you don't need it, please remove it.
 
 If you want to install translations for system messages:
 
