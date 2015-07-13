@@ -75,7 +75,7 @@ class Installer
         $io->write('$ cd <codeigniter_project_folder>');
         $io->write('$ php bin/install.php');
         $io->write('<info>Above command will show help message.</info>');
-        $io->write('See https://github.com/kenjis/codeigniter-composer-installer');
+        $io->write('See https://github.com/kenjis/codeigniter-composer-installer for details');
         $io->write('==================================================');
 
         self::deleteSelf();
