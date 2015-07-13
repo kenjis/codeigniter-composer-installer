@@ -15,7 +15,7 @@ use Composer\Script\Event;
 class Installer
 {
     const DOCROOT = 'public';
-    
+
     /**
      * Composer post install script
      *
@@ -55,8 +55,34 @@ class Installer
         file_put_contents($file, $contents);
         
         copy('composer.json.dist', 'composer.json');
-        
-        // delete self
+    }
+
+    /**
+     * Composer post install script
+     *
+     * @param Event $event
+     */
+    public static function showMessage(Event $event = null)
+    {
+        $io = $event->getIO();
+        $io->write('==================================================');
+        $io->write(
+            '<info>`public/.htaccess` was installed. If you don\'t need it, please remove it.</info>'
+        );
+        $io->write(
+            '<info>If you want to install translations for system messages or some third party libraries,</info>'
+        );
+        $io->write('$ cd <codeigniter_project_folder>');
+        $io->write('$ php bin/install.php');
+        $io->write('<info>Above command will show help message.</info>');
+        $io->write('See https://github.com/kenjis/codeigniter-composer-installer');
+        $io->write('==================================================');
+
+        self::deleteSelf();
+    }
+
+    private static function deleteSelf()
+    {
         unlink(__FILE__);
         rmdir('src');
         unlink('composer.json.dist');

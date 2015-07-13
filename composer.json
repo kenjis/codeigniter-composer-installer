@@ -25,7 +25,8 @@
     "scripts" : {
         "post-install-cmd": [
             "Kenjis\\CodeIgniter\\Installer::postInstall",
-            "composer update"
+            "composer update",
+            "Kenjis\\CodeIgniter\\Installer::showMessage"
         ]
     },
     "extra": {
