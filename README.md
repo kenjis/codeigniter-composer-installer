@@ -36,7 +36,7 @@ codeigniter/
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
 
-Above command installs `public/.htaccess` to remove `index.php` from URL. If you don't need it, please remove it.
+Above command installs `public/.htaccess` to remove `index.php` from URL AND `application/config/config.php`'s Line75 edit to `$config['index_page'] = 'index.php';`. If you don't need it, please remove it.
 
 If you want to install translations for system messages:
 
