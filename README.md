@@ -36,7 +36,23 @@ codeigniter/
 $ composer create-project kenjis/codeigniter-composer-installer codeigniter
 ```
 
-Above command installs `public/.htaccess` to remove `index.php` from URL AND `application/config/config.php`'s Line75 edit to `$config['index_page'] = 'index.php';`. If you don't need it, please remove it.
+Above command installs `public/.htaccess` to remove `index.php` in your URL. If you don't need it, please remove it.
+
+And it changes `application/config/config.php`:
+
+~~~
+$config['composer_autoload'] = FALSE;
+↓
+$config['composer_autoload'] = realpath(APPPATH . '../vendor/autoload.php');
+~~~
+
+~~~
+$config['index_page'] = 'index.php';
+↓
+$config['index_page'] = '';
+~~~
+
+#### Install Translations for System Messages
 
 If you want to install translations for system messages:
 
