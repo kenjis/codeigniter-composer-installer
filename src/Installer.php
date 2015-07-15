@@ -44,12 +44,17 @@ class Installer
         );
         file_put_contents($file, $contents);
         
-        // Enable Composer Autoloader
+        // Enable Composer Autoloader AND 'index_page' is blank
         $file = 'application/config/config.php';
         $contents = file_get_contents($file);
         $contents = str_replace(
             '$config[\'composer_autoload\'] = FALSE;',
             '$config[\'composer_autoload\'] = realpath(APPPATH . \'../vendor/autoload.php\');',
+            $contents
+        );
+        $contents = str_replace(
+            '$config[\'index_page\'] = \'index.php\';',
+            '$config[\'index_page\'] = \'\';',
             $contents
         );
         file_put_contents($file, $contents);
