@@ -22,6 +22,5 @@ composer require kenjis/codeigniter-ss-twig:1.0.x@dev
 php vendor/kenjis/codeigniter-ss-twig/install.php
 
 # Install CodeIgniter Deployer
-composer require phpseclib/phpseclib:dev-master#2c96af214bf1b5e29b707249108504b4e0041a21
 composer require kenjis/codeigniter-deployer:1.0.x@dev --dev
 php vendor/kenjis/codeigniter-deployer/install.php
