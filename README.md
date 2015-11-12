@@ -96,8 +96,7 @@ $ php bin/install.php filename-checker master
 ### Run PHP built-in server (PHP 5.4 or later)
 
 ```
-$ cd /path/to/codeigniter
-$ php -S localhost:8000 -t public/ bin/router.php
+$ bin/server.sh
 ```
 
 ### Update CodeIgniter
