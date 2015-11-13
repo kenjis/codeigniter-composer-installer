@@ -184,7 +184,7 @@ class Installer
         if ($file === false) {
             throw new RuntimeException("Can't download: $url");
         }
-        echo 'Downloaed: ' . $url . PHP_EOL;
+        echo 'Downloaded: ' . $url . PHP_EOL;
         
         $urls = parse_url($url);
         $filepath = $this->tmp_dir . '/' . basename($urls['path']);
