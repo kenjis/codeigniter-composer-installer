@@ -6,6 +6,9 @@ cd ..
 # Install translations
 php bin/install.php translations develop
 
+# Install Roave Security Advisories
+composer require roave/security-advisories:dev-master
+
 # Install CodeIgniter Simple and Secure Twig
 composer require kenjis/codeigniter-ss-twig:1.0.x@dev
 php vendor/kenjis/codeigniter-ss-twig/install.php
