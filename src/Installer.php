@@ -23,8 +23,8 @@ class Installer
      */
     public static function postInstall(Event $event = null)
     {
+        // Copy CodeIgniter files
         self::recursiveCopy('vendor/codeigniter/framework/application', 'application');
-        
         mkdir(static::DOCROOT, 0755);
         copy('vendor/codeigniter/framework/index.php', static::DOCROOT . '/index.php');
         copy('dot.htaccess', static::DOCROOT . '/.htaccess');
@@ -52,6 +52,7 @@ class Installer
             '$config[\'composer_autoload\'] = realpath(APPPATH . \'../vendor/autoload.php\');',
             $contents
         );
+
         // Set 'index_page' blank
         $contents = str_replace(
             '$config[\'index_page\'] = \'index.php\';',
@@ -59,8 +60,23 @@ class Installer
             $contents
         );
         file_put_contents($file, $contents);
-        
+
+        // Update composer.json
         copy('composer.json.dist', 'composer.json');
+
+        // Run composer update
+        self::composerUpdate();
+
+        // Show message
+        self::showMessage($event);
+
+        // Delete unneeded files
+        self::deleteSelf();
+    }
+
+    private static function composerUpdate()
+    {
+        passthru('composer update');
     }
 
     /**
@@ -68,7 +84,7 @@ class Installer
      *
      * @param Event $event
      */
-    public static function showMessage(Event $event = null)
+    private static function showMessage(Event $event = null)
     {
         $io = $event->getIO();
         $io->write('==================================================');
@@ -83,8 +99,6 @@ class Installer
         $io->write('<info>Above command will show help message.</info>');
         $io->write('See <https://github.com/kenjis/codeigniter-composer-installer> for details');
         $io->write('==================================================');
-
-        self::deleteSelf();
     }
 
     private static function deleteSelf()
