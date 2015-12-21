@@ -57,7 +57,7 @@ class Installer
                 'site'  => 'github',
                 'user'  => 'benedmunds',
                 'repos' => 'CodeIgniter-Ion-Auth',
-                'name'  => 'Codeigniter Matches CLI',
+                'name'  => 'Codeigniter Ion Auth',
                 'dir'   => array(
                     'config', 'controllers', 'language', 'libraries',
                     'migrations', 'models', 'sql', 'views'
