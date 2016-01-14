@@ -106,7 +106,7 @@ $ cd /path/to/codeigniter
 $ composer update
 ```
 
-You must update files manually if files in `application` folder or `index.php` change.
+You must update files manually if files in `application` folder or `index.php` change. Check [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/installation/upgrading.html).
 
 ## Reference
 
