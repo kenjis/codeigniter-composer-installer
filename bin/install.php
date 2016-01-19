@@ -29,6 +29,15 @@ class Installer
                 'name'  => 'Translations for CodeIgniter System Messages',
                 'dir'   => 'language',
              ),
+            'codeigniter-restserver' => array(
+                'site'  => 'github',
+                'user'  => 'chriskacerguis',
+                'repos' => 'codeigniter-restserver',
+                'name'  => 'CodeIgniter REST Server',
+                'dir'   => array('config', 'controllers', 'language', 'libraries', 'views'),
+                'pre'   => 'application/',
+                'msg'   => 'See https://github.com/chriskacerguis/codeigniter-restserver',
+            ),
             'matches-cli' => array(
                 'site'  => 'github',
                 'user'  => 'avenirer',
@@ -138,15 +147,16 @@ class Installer
         $this->unzip($filepath);
 
         $dir = $this->packages[$package]['dir'];
+        $pre = isset($this->packages[$package]['pre']) ? $this->packages[$package]['pre'] : '';
         
         if (is_string($dir)) {
-            $src = realpath(dirname($filepath) . "/$repos-$version/$dir");
+            $src = realpath(dirname($filepath) . "/$repos-$version/$pre$dir");
             $dst = realpath(__DIR__ . "/../application/$dir");
             return [$src, $dst];
         }
         
         foreach ($dir as $directory) {
-            $src[] = realpath(dirname($filepath) . "/$repos-$version/$directory");
+            $src[] = realpath(dirname($filepath) . "/$repos-$version/$pre$directory");
             @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
