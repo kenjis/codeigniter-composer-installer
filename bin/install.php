@@ -21,14 +21,25 @@ class Installer
         $this->tmp_dir = __DIR__ . '/tmp';
         @mkdir($this->tmp_dir);
         
-        $this->packages = [
+        $this->packages = array(
             'translations' => array(
                 'site'  => 'github',
                 'user'  => 'bcit-ci',
                 'repos' => 'codeigniter3-translations',
                 'name'  => 'Translations for CodeIgniter System Messages',
                 'dir'   => 'language',
+                'example_branch' => '3.0.0',
              ),
+            'restserver' => array(
+                'site'  => 'github',
+                'user'  => 'chriskacerguis',
+                'repos' => 'codeigniter-restserver',
+                'name'  => 'CodeIgniter REST Server',
+                'dir'   => array('config', 'controllers', 'language', 'libraries', 'views'),
+                'pre'   => 'application/',
+                'msg'   => 'See https://github.com/chriskacerguis/codeigniter-restserver',
+                'example_branch' => '2.7.2',
+            ),
             'matches-cli' => array(
                 'site'  => 'github',
                 'user'  => 'avenirer',
@@ -36,6 +47,7 @@ class Installer
                 'name'  => 'Codeigniter Matches CLI',
                 'dir'   => array('config', 'controllers', 'views'),
                 'msg'   => 'See http://avenirer.github.io/codeigniter-matches-cli/',
+                'example_branch' => 'master',
             ),
             'hmvc-modules' => array(
                 'site'  => 'github',
@@ -44,6 +56,7 @@ class Installer
                 'name'  => 'CodeIgniter HMVC Modules (jenssegers)',
                 'dir'   => array('core', 'third_party'),
                 'msg'   => 'See https://github.com/jenssegers/codeigniter-hmvc-modules#installation',
+                'example_branch' => 'master',
             ),
             'modular-extensions-hmvc' => array(
                 'site'  => 'bitbucket',
@@ -52,6 +65,7 @@ class Installer
                 'name'  => 'Modular Extensions - HMVC (wiredesignz)',
                 'dir'   => array('core', 'third_party'),
                 'msg'   => 'See https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc',
+                'example_branch' => 'codeigniter-3.x',
             ),
             'ion-auth' => array(
                 'site'  => 'github',
@@ -63,6 +77,7 @@ class Installer
                     'migrations', 'models', 'sql', 'views'
                 ),
                 'msg'   => 'See http://benedmunds.com/ion_auth/',
+                'example_branch' => '2',
             ),
             'filename-checker' => array(
                 'site'  => 'github',
@@ -71,8 +86,9 @@ class Installer
                 'name'  => 'CodeIgniter3 Filename Checker',
                 'dir'   => 'controllers',
                 'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
+                'example_branch' => 'master',
             ),
-        ];
+        );
     }
 
     public function usage($self)
@@ -88,13 +104,10 @@ class Installer
         $msg .= '  php install.php <package> <version/branch>'  . PHP_EOL;
         $msg .= PHP_EOL;
         $msg .= 'Examples:' . PHP_EOL;
-        $msg .= "  php $self translations 3.0.0"  . PHP_EOL;
-        $msg .= "  php $self translations develop"  . PHP_EOL;
-        $msg .= "  php $self matches-cli master"  . PHP_EOL;
-        $msg .= "  php $self hmvc-modules master"  . PHP_EOL;
-        $msg .= "  php $self modular-extensions-hmvc codeigniter-3.x"  . PHP_EOL;
-        $msg .= "  php $self ion-auth 2"  . PHP_EOL;
-        $msg .= "  php $self filename-checker master"  . PHP_EOL;
+
+        foreach ($this->packages as $key => $value) {
+            $msg .= "  php $self $key " . $value['example_branch'] . PHP_EOL;
+        }
 
         return $msg;
     }
@@ -138,19 +151,20 @@ class Installer
         $this->unzip($filepath);
 
         $dir = $this->packages[$package]['dir'];
+        $pre = isset($this->packages[$package]['pre']) ? $this->packages[$package]['pre'] : '';
         
         if (is_string($dir)) {
-            $src = realpath(dirname($filepath) . "/$repos-$version/$dir");
+            $src = realpath(dirname($filepath) . "/$repos-$version/$pre$dir");
             $dst = realpath(__DIR__ . "/../application/$dir");
-            return [$src, $dst];
+            return array($src, $dst);
         }
         
         foreach ($dir as $directory) {
-            $src[] = realpath(dirname($filepath) . "/$repos-$version/$directory");
+            $src[] = realpath(dirname($filepath) . "/$repos-$version/$pre$directory");
             @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
-        return [$src, $dst];
+        return array($src, $dst);
     }
 
     private function downloadFromBitbucket($package, $version)
@@ -167,7 +181,7 @@ class Installer
         if (is_string($dir)) {
             $src = realpath(dirname($filepath) . "/$dirname/$dir");
             $dst = realpath(__DIR__ . "/../application/$dir");
-            return [$src, $dst];
+            return array($src, $dst);
         }
         
         foreach ($dir as $directory) {
@@ -175,7 +189,7 @@ class Installer
             @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
-        return [$src, $dst];
+        return array($src, $dst);
     }
 
     private function download($url)
@@ -216,6 +230,10 @@ class Installer
      */
     private function recursiveCopy($src, $dst)
     {
+        if ($src === false) {
+            return;
+        }
+
         if (is_array($src)) {
             foreach ($src as $key => $source) {
                 $this->recursiveCopy($source, $dst[$key]);
