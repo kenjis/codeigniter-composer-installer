@@ -21,7 +21,7 @@ class Installer
         $this->tmp_dir = __DIR__ . '/tmp';
         @mkdir($this->tmp_dir);
         
-        $this->packages = [
+        $this->packages = array(
             'translations' => array(
                 'site'  => 'github',
                 'user'  => 'bcit-ci',
@@ -81,7 +81,7 @@ class Installer
                 'dir'   => 'controllers',
                 'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
             ),
-        ];
+        );
     }
 
     public function usage($self)
@@ -152,7 +152,7 @@ class Installer
         if (is_string($dir)) {
             $src = realpath(dirname($filepath) . "/$repos-$version/$pre$dir");
             $dst = realpath(__DIR__ . "/../application/$dir");
-            return [$src, $dst];
+            return array($src, $dst);
         }
         
         foreach ($dir as $directory) {
@@ -160,7 +160,7 @@ class Installer
             @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
-        return [$src, $dst];
+        return array($src, $dst);
     }
 
     private function downloadFromBitbucket($package, $version)
@@ -177,7 +177,7 @@ class Installer
         if (is_string($dir)) {
             $src = realpath(dirname($filepath) . "/$dirname/$dir");
             $dst = realpath(__DIR__ . "/../application/$dir");
-            return [$src, $dst];
+            return array($src, $dst);
         }
         
         foreach ($dir as $directory) {
@@ -185,7 +185,7 @@ class Installer
             @mkdir(__DIR__ . "/../application/$directory");
             $dst[] = realpath(__DIR__ . "/../application/$directory");
         }
-        return [$src, $dst];
+        return array($src, $dst);
     }
 
     private function download($url)
