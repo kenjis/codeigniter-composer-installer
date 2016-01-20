@@ -226,6 +226,10 @@ class Installer
      */
     private function recursiveCopy($src, $dst)
     {
+        if ($src === false) {
+            return;
+        }
+
         if (is_array($src)) {
             foreach ($src as $key => $source) {
                 $this->recursiveCopy($source, $dst[$key]);
