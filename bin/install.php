@@ -34,7 +34,7 @@ class Installer
                 'site'  => 'github',
                 'user'  => 'chriskacerguis',
                 'repos' => 'codeigniter-restserver',
-                'name'  => 'CodeIgniter REST Server',
+                'name'  => 'CodeIgniter Rest Server',
                 'dir'   => array('config', 'controllers', 'language', 'libraries', 'views'),
                 'pre'   => 'application/',
                 'msg'   => 'See https://github.com/chriskacerguis/codeigniter-restserver',

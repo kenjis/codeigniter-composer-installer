@@ -93,7 +93,7 @@ $ php bin/install.php ion-auth 2
 $ php bin/install.php filename-checker master
 ```
 
-[CodeIgniter REST Server](https://github.com/chriskacerguis/codeigniter-restserver):
+[CodeIgniter Rest Server](https://github.com/chriskacerguis/codeigniter-restserver):
 
 ```
 $ php bin/install.php restserver 2.7.2
