@@ -23,7 +23,7 @@
         }
     },
     "scripts" : {
-        "post-install-cmd": [
+        "post-create-project-cmd": [
             "Kenjis\\CodeIgniter\\Installer::postInstall"
         ]
     },
