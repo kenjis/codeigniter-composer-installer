@@ -1,3 +1,6 @@
+# I recommend you remove `IfModule`. Because if you need mod_rewrite,
+# you don't need `IfModule`. If you don't need it, you don't need this file
+# at all.
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
