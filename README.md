@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/stable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Total Downloads](https://poser.pugx.org/kenjis/codeigniter-composer-installer/downloads)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Latest Unstable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/unstable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![License](https://poser.pugx.org/kenjis/codeigniter-composer-installer/license)](https://packagist.org/packages/kenjis/codeigniter-composer-installer)
 
-This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (version `3.0.*`) with secure folder structure via Composer.
+This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (version `3.1.*`) with secure folder structure via Composer.
 
 You can update CodeIgniter system folder to latest version with one command.
 
@@ -24,7 +24,7 @@ codeigniter/
 
 ## Requirements
 
-* PHP 5.3.2 or later
+* PHP 5.3.7 or later
 * `composer` command (See [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx))
 * Git
 
@@ -58,7 +58,7 @@ If you want to install translations for system messages:
 
 ```
 $ cd /path/to/codeigniter
-$ php bin/install.php translations 3.0.0
+$ php bin/install.php translations 3.1.0
 ```
 
 #### Install Third Party Libraries
