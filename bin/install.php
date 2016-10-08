@@ -28,7 +28,7 @@ class Installer
                 'repos' => 'codeigniter3-translations',
                 'name'  => 'Translations for CodeIgniter System Messages',
                 'dir'   => 'language',
-                'example_branch' => '3.0.0',
+                'example_branch' => '3.1.0',
              ),
             'restserver' => array(
                 'site'  => 'github',
