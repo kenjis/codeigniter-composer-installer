@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/stable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Total Downloads](https://poser.pugx.org/kenjis/codeigniter-composer-installer/downloads)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Latest Unstable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/unstable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![License](https://poser.pugx.org/kenjis/codeigniter-composer-installer/license)](https://packagist.org/packages/kenjis/codeigniter-composer-installer)
 
-This package installs the offical [CodeIgniter4](https://github.com/bcit-ci/CodeIgniter4) (version `dev-master`) via Composer.
+This package installs the offical [CodeIgniter4](https://github.com/bcit-ci/CodeIgniter4) (version `dev-develop`) via Composer.
 
 You can update CodeIgniter system folder to latest version with one command.
 
@@ -34,20 +34,6 @@ codeigniter/
 ```
 $ composer create-project kenjis/codeigniter-composer-installer:4.x-dev codeigniter
 ```
-
-Above command changes `application/config/config.php`:
-
-~~~
-$config['composer_autoload'] = FALSE;
-↓
-$config['composer_autoload'] = realpath(APPPATH . '../vendor/autoload.php');
-~~~
-
-~~~
-$config['index_page'] = 'index.php';
-↓
-$config['index_page'] = '';
-~~~
 
 ### Run PHP built-in server 
 
