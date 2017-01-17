@@ -25,38 +25,30 @@ class Installer
     {
         // Copy CodeIgniter files
         self::recursiveCopy('vendor/codeigniter/framework/application', 'application');
-        mkdir(static::DOCROOT, 0755);
-        copy('vendor/codeigniter/framework/index.php', static::DOCROOT . '/index.php');
-        copy('dot.htaccess', static::DOCROOT . '/.htaccess');
+        self::recursiveCopy('vendor/codeigniter/framework/public', 'public');
+        self::recursiveCopy('vendor/codeigniter/framework/writable', 'writable');
+        self::recursiveCopy('vendor/codeigniter/framework/tests', 'tests');
+        copy('vendor/codeigniter/framework/ci.php', 'ci.php');
+        copy('vendor/codeigniter/framework/rewrite.php', 'rewrite.php');
+        copy('vendor/codeigniter/framework/serve.php', 'serve.php');
+        copy('vendor/codeigniter/framework/phpunit.xml.dist', 'phpunit.xml.dist');
 
-        // Fix paths in index.php
-        $file = static::DOCROOT . '/index.php';
+        // Fix paths in Paths.php
+        $file = 'application/Config/Paths.php';
         $contents = file_get_contents($file);
         $contents = str_replace(
-            '$system_path = \'system\';',
-            '$system_path = \'../vendor/codeigniter/framework/system\';',
-            $contents
-        );
-        $contents = str_replace(
-            '$application_folder = \'application\';',
-            '$application_folder = \'../application\';',
+            'public $systemDirectory = \'../system\';',
+            'public $systemDirectory = \'../vendor/codeigniter/framework/system\';',
             $contents
         );
         file_put_contents($file, $contents);
 
-        // Enable Composer Autoloader
-        $file = 'application/config/config.php';
+        // Fix paths in serve.php
+        $file = 'serve.php';
         $contents = file_get_contents($file);
         $contents = str_replace(
-            '$config[\'composer_autoload\'] = FALSE;',
-            '$config[\'composer_autoload\'] = realpath(APPPATH . \'../vendor/autoload.php\');',
-            $contents
-        );
-
-        // Set 'index_page' blank
-        $contents = str_replace(
-            '$config[\'index_page\'] = \'index.php\';',
-            '$config[\'index_page\'] = \'\';',
+            'require_once __DIR__.\'/system/',
+            'require_once __DIR__.\'/vendor/codeigniter/framework/system/',
             $contents
         );
         file_put_contents($file, $contents);
@@ -88,16 +80,8 @@ class Installer
     {
         $io = $event->getIO();
         $io->write('==================================================');
-        $io->write(
-            '<info>`public/.htaccess` was installed. If you don\'t need it, please remove it.</info>'
-        );
-        $io->write(
-            '<info>If you want to install translations for system messages or some third party libraries,</info>'
-        );
-        $io->write('$ cd <codeigniter_project_folder>');
-        $io->write('$ php bin/install.php');
-        $io->write('<info>Above command will show help message.</info>');
-        $io->write('See <https://github.com/kenjis/codeigniter-composer-installer> for details');
+        $io->write('<info>CodeIgniter4 was installed.</info>');
+        $io->write('If you know about this installer, see <https://github.com/kenjis/codeigniter-composer-installer>.');
         $io->write('==================================================');
     }
 
@@ -106,7 +90,6 @@ class Installer
         unlink(__FILE__);
         rmdir('src');
         unlink('composer.json.dist');
-        unlink('dot.htaccess');
         unlink('LICENSE.md');
     }
 
