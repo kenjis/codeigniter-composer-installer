@@ -26,6 +26,7 @@ codeigniter/
 
 * PHP 7.0 or later
 * `composer` command (See [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx))
+* Git
 
 ## How to Use
 
