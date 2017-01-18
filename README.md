@@ -39,6 +39,7 @@ $ composer create-project kenjis/codeigniter-composer-installer:4.x-dev codeigni
 ### Run PHP built-in server 
 
 ```
+$ cd /path/to/codeigniter
 $ bin/server.sh
 ```
 
