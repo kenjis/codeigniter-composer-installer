@@ -104,6 +104,7 @@ $ php bin/install.php restserver 2.7.2
 ### Run PHP built-in server (PHP 5.4 or later)
 
 ```
+$ cd /path/to/codeigniter
 $ bin/server.sh
 ```
 
