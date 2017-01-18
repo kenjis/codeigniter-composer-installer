@@ -4,6 +4,8 @@
 
 This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (version `3.1.*`) with secure folder structure via Composer.
 
+**Note:** If you want to install CodeIgniter4 (under development), see <https://github.com/kenjis/codeigniter-composer-installer/tree/4.x>.
+
 You can update CodeIgniter system folder to latest version with one command.
 
 ## Folder Structure
@@ -120,7 +122,7 @@ You must update files manually if files in `application` folder or `index.php` c
 * [CodeIgniter](https://github.com/bcit-ci/CodeIgniter)
 * [Translations for CodeIgniter System](https://github.com/bcit-ci/codeigniter3-translations)
 
-## Related Projects for CodeIgniter 3.0
+## Related Projects for CodeIgniter 3.x
 
 * [Cli for CodeIgniter 3.0](https://github.com/kenjis/codeigniter-cli)
 * [ci-phpunit-test](https://github.com/kenjis/ci-phpunit-test)
