@@ -11,6 +11,8 @@
 /**
  * Router script for PHP built-in server
  */
+
+// See https://bugs.php.net/bug.php?id=67808
 $_SERVER = array_merge($_SERVER, $_ENV);
 
 $file = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'];
