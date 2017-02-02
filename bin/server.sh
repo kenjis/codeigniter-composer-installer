@@ -7,7 +7,6 @@
 ## @copyright  2015 Kenji Suzuki
 ## @link       https://github.com/kenjis/codeigniter-composer-installer
 
-cd `dirname $0`
-cd ..
+cd `dirname $0`/..
 
 php -S 127.0.0.1:8000 -t public/ bin/router.php
