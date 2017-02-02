@@ -32,6 +32,7 @@ class Installer
         copy('vendor/codeigniter/framework/rewrite.php', 'rewrite.php');
         copy('vendor/codeigniter/framework/serve.php', 'serve.php');
         copy('vendor/codeigniter/framework/phpunit.xml.dist', 'phpunit.xml.dist');
+        copy('vendor/codeigniter/framework/.gitignore', '.gitignore');
 
         // Fix paths in Paths.php
         $file = 'application/Config/Paths.php';
