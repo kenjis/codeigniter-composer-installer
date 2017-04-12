@@ -8,6 +8,6 @@
 	],
 	"require": {
 		"php": ">=7.0.0",
-		"codeigniter/framework": "dev-develop"
+		"codeigniter4/framework": "dev-develop"
 	}
 }
