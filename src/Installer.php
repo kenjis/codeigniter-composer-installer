@@ -24,22 +24,22 @@ class Installer
     public static function postInstall(Event $event = null)
     {
         // Copy CodeIgniter files
-        self::recursiveCopy('vendor/codeigniter/framework/application', 'application');
-        self::recursiveCopy('vendor/codeigniter/framework/public', 'public');
-        self::recursiveCopy('vendor/codeigniter/framework/writable', 'writable');
-        self::recursiveCopy('vendor/codeigniter/framework/tests', 'tests');
-        copy('vendor/codeigniter/framework/ci.php', 'ci.php');
-        copy('vendor/codeigniter/framework/rewrite.php', 'rewrite.php');
-        copy('vendor/codeigniter/framework/serve.php', 'serve.php');
-        copy('vendor/codeigniter/framework/phpunit.xml.dist', 'phpunit.xml.dist');
-        copy('vendor/codeigniter/framework/.gitignore', '.gitignore');
+        self::recursiveCopy('vendor/codeigniter4/framework/application', 'application');
+        self::recursiveCopy('vendor/codeigniter4/framework/public', 'public');
+        self::recursiveCopy('vendor/codeigniter4/framework/writable', 'writable');
+        self::recursiveCopy('vendor/codeigniter4/framework/tests', 'tests');
+        copy('vendor/codeigniter4/framework/ci.php', 'ci.php');
+        copy('vendor/codeigniter4/framework/rewrite.php', 'rewrite.php');
+        copy('vendor/codeigniter4/framework/serve.php', 'serve.php');
+        copy('vendor/codeigniter4/framework/phpunit.xml.dist', 'phpunit.xml.dist');
+        copy('vendor/codeigniter4/framework/.gitignore', '.gitignore');
 
         // Fix paths in Paths.php
         $file = 'application/Config/Paths.php';
         $contents = file_get_contents($file);
         $contents = str_replace(
             'public $systemDirectory = \'../system\';',
-            'public $systemDirectory = \'../vendor/codeigniter/framework/system\';',
+            'public $systemDirectory = \'../vendor/codeigniter4/framework/system\';',
             $contents
         );
         file_put_contents($file, $contents);
@@ -49,7 +49,7 @@ class Installer
         $contents = file_get_contents($file);
         $contents = str_replace(
             'require_once __DIR__.\'/system/',
-            'require_once __DIR__.\'/vendor/codeigniter/framework/system/',
+            'require_once __DIR__.\'/vendor/codeigniter4/framework/system/',
             $contents
         );
         file_put_contents($file, $contents);
