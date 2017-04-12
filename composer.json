@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-            "codeigniter/framework": "dev-develop"
+            "codeigniter4/framework": "dev-develop"
     },
     "autoload": {
         "psr-4": {
