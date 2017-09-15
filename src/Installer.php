@@ -28,9 +28,7 @@ class Installer
         self::recursiveCopy('vendor/codeigniter4/framework/public', 'public');
         self::recursiveCopy('vendor/codeigniter4/framework/writable', 'writable');
         self::recursiveCopy('vendor/codeigniter4/framework/tests', 'tests');
-        copy('vendor/codeigniter4/framework/ci.php', 'ci.php');
         copy('vendor/codeigniter4/framework/rewrite.php', 'rewrite.php');
-        copy('vendor/codeigniter4/framework/serve.php', 'serve.php');
         copy('vendor/codeigniter4/framework/phpunit.xml.dist', 'phpunit.xml.dist');
         copy('vendor/codeigniter4/framework/.gitignore', '.gitignore');
 
@@ -40,16 +38,6 @@ class Installer
         $contents = str_replace(
             'public $systemDirectory = \'../system\';',
             'public $systemDirectory = \'../vendor/codeigniter4/framework/system\';',
-            $contents
-        );
-        file_put_contents($file, $contents);
-
-        // Fix paths in serve.php
-        $file = 'serve.php';
-        $contents = file_get_contents($file);
-        $contents = str_replace(
-            'require_once __DIR__.\'/system/',
-            'require_once __DIR__.\'/vendor/codeigniter4/framework/system/',
             $contents
         );
         file_put_contents($file, $contents);
