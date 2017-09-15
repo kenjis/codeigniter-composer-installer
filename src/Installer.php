@@ -28,7 +28,6 @@ class Installer
         self::recursiveCopy('vendor/codeigniter4/framework/public', 'public');
         self::recursiveCopy('vendor/codeigniter4/framework/writable', 'writable');
         self::recursiveCopy('vendor/codeigniter4/framework/tests', 'tests');
-        copy('vendor/codeigniter4/framework/ci.php', 'ci.php');
         copy('vendor/codeigniter4/framework/rewrite.php', 'rewrite.php');
         copy('vendor/codeigniter4/framework/serve.php', 'serve.php');
         copy('vendor/codeigniter4/framework/phpunit.xml.dist', 'phpunit.xml.dist');
