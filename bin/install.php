@@ -88,6 +88,15 @@ class Installer
                 'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
                 'example_branch' => 'master',
             ),
+            'codeigniter-develbar' => array(
+                'site'  => 'github',
+                'user'  => 'jcsama',
+                'repos' => 'codeigniter-develbar',
+                'name'  => 'codeigniter-develbar',
+                'dir'   => array('config','core', 'third_party','controllers'),
+                'msg'   => 'See https://github.com/JCSama/CodeIgniter-develbar',
+                'example_branch' => 'master',
+            ),
         );
     }
 
