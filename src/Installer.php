@@ -112,19 +112,13 @@ class Installer
         unlink('LICENSE.md');
     }
    
-
     /**
      * Delete Tree
      *
      * @param string $dir
      */
-    private static function delTree($dir) {
-        /*$files = array_diff(scandir($dir), array('.','..'));
-        foreach ($files as $file) {
-            (is_dir("$dir/$file")) ? self::delTree("$dir/$file") : unlink("$dir/$file");
-        }
-        return rmdir($dir);*/
-
+    private static function delTree($dir) 
+    {
         $files = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($dir, \RecursiveDirectoryIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::CHILD_FIRST
