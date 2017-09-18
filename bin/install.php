@@ -88,6 +88,7 @@ class Installer
                 'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
                 'example_branch' => 'master',
             ),
+
             'twig' => array(
                 'site'  => 'github',
                 'user'  => 'kenjis',
@@ -96,6 +97,14 @@ class Installer
                 'dir'   => 'libraries',
                 'msg'   => 'See https://github.com/kenjis/codeigniter-ss-twig',
                 'require' => array("twig/twig", "~1.22"),
+
+            'codeigniter-develbar' => array(
+                'site'  => 'github',
+                'user'  => 'jcsama',
+                'repos' => 'codeigniter-develbar',
+                'name'  => 'codeigniter-develbar',
+                'dir'   => array('config','core', 'third_party','controllers'),
+                'msg'   => 'See https://github.com/JCSama/CodeIgniter-develbar',
                 'example_branch' => 'master',
             ),
         );
