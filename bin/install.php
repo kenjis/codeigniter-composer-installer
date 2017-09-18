@@ -97,6 +97,7 @@ class Installer
                 'dir'   => 'libraries',
                 'msg'   => 'See https://github.com/kenjis/codeigniter-ss-twig',
                 'require' => array("twig/twig", "~1.22"),
+            ),  
 
             'codeigniter-develbar' => array(
                 'site'  => 'github',
