@@ -33,7 +33,7 @@ codeigniter/
 ### Install CodeIgniter
 
 ```
-$ composer create-project kenjis/codeigniter-composer-installer:4.x-dev codeigniter
+$ composer create-project kenjis/codeigniter-composer-installer:4.x-dev codeigniter4
 ```
 
 ### Run PHP built-in server 
