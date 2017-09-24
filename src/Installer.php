@@ -82,7 +82,7 @@ class Installer
         $io = $event->getIO();
         $io->write('==================================================');
         $io->write('<info>CodeIgniter4 was installed.</info>');
-        $io->write('If you know about this installer, see <https://github.com/kenjis/codeigniter-composer-installer/tree/4.x>.');
+        $io->write('If you want to know about this installer, see <https://github.com/kenjis/codeigniter-composer-installer/tree/4.x>.');
         $io->write('==================================================');
     }
 
