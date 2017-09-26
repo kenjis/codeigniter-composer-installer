@@ -104,11 +104,31 @@ class Installer
 
     private static function deleteSelf()
     {
+        self::delTree("vendor/codeigniter/framework/application");
         unlink(__FILE__);
         rmdir('src');
         unlink('composer.json.dist');
         unlink('dot.htaccess');
         unlink('LICENSE.md');
+    }
+   
+    /**
+     * Delete Tree
+     *
+     * @param string $dir
+     */
+    private static function delTree($dir) 
+    {
+        $files = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($dir, \RecursiveDirectoryIterator::SKIP_DOTS),
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+
+        foreach ($files as $fileinfo) {
+            $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
+            $todo($fileinfo->getRealPath());
+        }
+        rmdir($dir);
     }
 
     /**
