@@ -9,4 +9,4 @@
 
 cd `dirname $0`/..
 
-php -S 127.0.0.1:8000 -t public/ bin/router.php
+php -S 127.0.0.1:8000 -t public/ -f bin/router.php
