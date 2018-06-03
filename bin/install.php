@@ -91,8 +91,8 @@ class Installer
             'codeigniter-develbar' => array(
                 'site'  => 'github',
                 'user'  => 'jcsama',
-                'repos' => 'codeigniter-develbar',
-                'name'  => 'codeigniter-develbar',
+                'repos' => 'CodeIgniter-develbar',
+                'name'  => 'CodeIgniter Developer Toolbar',
                 'dir'   => array('config','core', 'third_party','controllers'),
                 'msg'   => 'See https://github.com/JCSama/CodeIgniter-develbar',
                 'example_branch' => 'master',
