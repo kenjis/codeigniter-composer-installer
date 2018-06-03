@@ -9,7 +9,7 @@
 
 cd `dirname $0`/..
 
-SERVER_HOST=${1:-127.0.0.1:8000}
-SERVER_ROOT=${2:-public/}
+ADDR_PORT=${1:-127.0.0.1:8000}
+DOC_ROOT=${2:-public}
 
-php -S $SERVER_HOST -t $SERVER_ROOT/ -f bin/router.php
+php -S "$ADDR_PORT" -t "$DOC_ROOT/" -f bin/router.php
