@@ -36,8 +36,8 @@ class Installer
         $file = 'application/Config/Paths.php';
         $contents = file_get_contents($file);
         $contents = str_replace(
-            'public $systemDirectory = \'../system\';',
-            'public $systemDirectory = \'../vendor/codeigniter4/framework/system\';',
+            'public $systemDirectory = \'system\';',
+            'public $systemDirectory = \'vendor/codeigniter4/framework/system\';',
             $contents
         );
         file_put_contents($file, $contents);
