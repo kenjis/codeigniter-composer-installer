@@ -10,4 +10,4 @@
 cd `dirname $0`
 cd ..
 
-php serve
+php spark serve
