@@ -42,6 +42,9 @@ class Installer
         // Fix paths in index.php
         self::replaceIndex();
 
+        // Create .env file
+        self::createDotEnv();
+
         // Update composer.json
         copy('composer.json.dist', 'composer.json');
 
@@ -53,6 +56,19 @@ class Installer
 
         // Delete unneeded files
         self::deleteSelf();
+    }
+
+    private static function createDotEnv()
+    {
+        copy('vendor/codeigniter4/framework/env', '.env');
+        $file = '.env';
+        $contents = file_get_contents($file);
+        $contents = str_replace(
+            '# app.baseURL = \'\'',
+            'app.baseURL = \'http://localhost:8080/\'',
+            $contents
+        );
+        file_put_contents($file, $contents);
     }
 
     private static function replacePaths()
