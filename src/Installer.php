@@ -31,6 +31,7 @@ class Installer
         copy('vendor/codeigniter4/framework/spark', 'spark');
         copy('vendor/codeigniter4/framework/phpunit.xml.dist', 'phpunit.xml.dist');
         copy('vendor/codeigniter4/framework/.gitignore', '.gitignore');
+        copy('vendor/codeigniter4/framework/env', 'env');
 
         // Fix paths in Paths.php
         self::replacePaths();
