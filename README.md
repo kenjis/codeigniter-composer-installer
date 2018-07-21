@@ -11,13 +11,14 @@ You can update CodeIgniter system folder to latest version with one command.
 ```
 codeigniter/
 ├── application/
+├── .env
 ├── composer.json
 ├── composer.lock
 ├── public/
 │   ├── .htaccess
 │   └── index.php
 └── vendor/
-    └── codeigniter/
+    └── codeigniter4/
         └── framework/
             └── system/
 ```
