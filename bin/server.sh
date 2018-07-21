@@ -10,7 +10,6 @@
 cd `dirname $0`
 cd ..
 
-rewrite="vendor/codeigniter4/framework/system/Commands/Server/rewrite.php"
-sed -i -e '/^\$fcpath/c $fcpath = realpath(__DIR__ . '\''/../../../../../../public'\'') . DIRECTORY_SEPARATOR;' "$rewrite"
+php bin/replace-rewrite.php
 
 php spark serve
