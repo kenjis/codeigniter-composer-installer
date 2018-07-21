@@ -33,14 +33,7 @@ class Installer
         copy('vendor/codeigniter4/framework/.gitignore', '.gitignore');
 
         // Fix paths in Paths.php
-        $file = 'application/Config/Paths.php';
-        $contents = file_get_contents($file);
-        $contents = str_replace(
-            'public $systemDirectory = \'system\';',
-            'public $systemDirectory = \'vendor/codeigniter4/framework/system\';',
-            $contents
-        );
-        file_put_contents($file, $contents);
+        self::replacePaths();
 
         // Update composer.json
         copy('composer.json.dist', 'composer.json');
@@ -53,6 +46,18 @@ class Installer
 
         // Delete unneeded files
         self::deleteSelf();
+    }
+
+    private static function replacePaths()
+    {
+        $file = 'application/Config/Paths.php';
+        $contents = file_get_contents($file);
+        $contents = str_replace(
+            'public $systemDirectory = \'system\';',
+            'public $systemDirectory = \'vendor/codeigniter4/framework/system\';',
+            $contents
+        );
+        file_put_contents($file, $contents);
     }
 
     private static function composerUpdate()
