@@ -44,6 +44,16 @@ $ cd /path/to/codeigniter
 $ bin/server.sh
 ```
 
+#### Arguments
+
+You can give arguments like CodeIgniter4 serve command.
+
+example)
+```
+$ cd /path/to/codeigniter
+$ bin/server.sh -host 127.0.0.1 -port 60000 -php /usr/bin/php.7.3.alpha
+```
+
 ### Update CodeIgniter
 
 ```
