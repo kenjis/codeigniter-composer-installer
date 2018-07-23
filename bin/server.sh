@@ -10,6 +10,4 @@
 cd `dirname $0`
 cd ..
 
-php bin/replace-rewrite.php
-
-php spark serve
+php spark serve $@

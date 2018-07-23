@@ -36,9 +36,6 @@ class Installer
         // Fix paths in Paths.php
         self::replacePaths();
 
-        // Fix paths in rewrite.php
-        self::replaceRewrite();
-
         // Fix paths in index.php
         self::replaceIndex();
 
@@ -78,21 +75,6 @@ class Installer
         $contents = str_replace(
             'public $systemDirectory = \'system\';',
             'public $systemDirectory = \'vendor/codeigniter4/framework/system\';',
-            $contents
-        );
-        file_put_contents($file, $contents);
-    }
-
-    /**
-     * I don't want to modify a file in vendor/, but ...
-     */
-    private static function replaceRewrite()
-    {
-        $file = 'vendor/codeigniter4/framework/system/Commands/Server/rewrite.php';
-        $contents = file_get_contents($file);
-        $contents = str_replace(
-            '$fcpath = realpath(__DIR__ . \'/../../../public\') . DIRECTORY_SEPARATOR;',
-            '$fcpath = realpath(__DIR__ . \'/../../../../../../public\') . DIRECTORY_SEPARATOR;',
             $contents
         );
         file_put_contents($file, $contents);
