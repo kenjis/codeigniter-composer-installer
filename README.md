@@ -46,12 +46,13 @@ $ bin/server.sh
 
 #### Arguments
 
-You can give arguments like CodeIgniter4 serve command.
+You can pass host as an argument.
+Default value is 127.0.0.1:8000.
 
 example)
 ```
 $ cd /path/to/codeigniter
-$ bin/server.sh -host 127.0.0.1 -port 60000 -php /usr/bin/php.7.3.alpha
+$ bin/server.sh 127.0.0.1:60000
 ```
 
 ### Update CodeIgniter
