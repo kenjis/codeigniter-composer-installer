@@ -24,7 +24,7 @@ codeigniter/
 
 ## Requirements
 
-* PHP 5.3.7 or later
+* PHP 5.3.7 or [later](https://www.php.net/supported-versions.php)
 * `composer` command (See [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx))
 * Git
 
