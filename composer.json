@@ -1,6 +1,7 @@
 {
     "name": "kenjis/codeigniter-composer-installer",
     "description": "Package to install CodeIgniter3 via Composer with secure folder structure.",
+    "type": "project",
     "keywords": [
         "CodeIgniter",
         "Composer",
