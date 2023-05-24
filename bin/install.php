@@ -88,6 +88,17 @@ class Installer
                 'msg'   => 'See https://github.com/kenjis/codeigniter3-filename-checker',
                 'example_branch' => 'master',
             ),
+
+            'twig' => array(
+                'site'  => 'github',
+                'user'  => 'kenjis',
+                'repos' => 'codeigniter-ss-twig',
+                'name'  => 'CodeIgniter3 Simple and Secure Twig Integration',
+                'dir'   => 'libraries',
+                'msg'   => 'See https://github.com/kenjis/codeigniter-ss-twig',
+                'require' => array("twig/twig", "~1.22"),
+            ),  
+
             'codeigniter-develbar' => array(
                 'site'  => 'github',
                 'user'  => 'jcsama',
@@ -143,6 +154,21 @@ class Installer
 
         $this->recursiveCopy($src, $dst);
         $this->recursiveUnlink($this->tmp_dir);
+
+        // install package needed by this library (if any)
+        if (array_key_exists('require',$this->packages[$package])) {
+            $input = file_get_contents( __DIR__."/../composer.json");
+            $composer = json_decode($input);
+
+            $require = $this->packages[$package]['require'][0];
+            $composer->require->$require = $this->packages[$package]['require'][1];
+
+            $output = json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            copy(__DIR__."/../composer.json", __DIR__."/../composer.json.save");
+            file_put_contents(__DIR__."/../composer.json", $output);
+            echo 'Installing package: ' . $this->packages[$package]['name'] . PHP_EOL;
+            passthru('composer update');
+        }
 
         $msg = 'Installed: ' . $package .PHP_EOL;
         if (isset($this->packages[$package]['msg'])) {
